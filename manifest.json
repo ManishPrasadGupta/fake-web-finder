@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "version": "1.0",
+  "name": "MegPol SecureSurf",
+  "description": "MegPol Browser Extension helps protect your online experience by providing real-time alerts for website safety. It notifies you when visiting blacklisted (malicious) sites, whitelisted (safe) sites verified by trusted authorities, and unverified sites. With MegPol, you can browse with confidence, knowing whether the site is secure or potentially risky. Stay safe, stay informed!",
+  "icons": {
+    "48": "icons/icon.512.png"
+  },
+  "permissions": [
+    "storage",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://cyber.megpolice.gov.in/lists/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "main.js"
+      ]
+    }
+  ]
+}
